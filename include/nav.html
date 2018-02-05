@@ -1,0 +1,123 @@
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-light">
+<button class="navbar-toggle" data-toggle="collapse" data-target="#responsive-navbar">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+</button>
+
+<div class="container body-ck">
+        <a href="{Stl.SiteUrl}" class="navbar-brand navbar-logo">
+        <img alt="Logo" class="logo" src="{Stl.Logo}">
+        </a>
+        <div class="navbar-collapse" id="">
+        <div class="menu-xs">
+            <div class="container">
+            <div class="row">
+                <div class="col-xs-7 col-sm-7 menu-left">
+                <stl:contents channelIndex="产品功能" totalNum="3">
+                <stl:a class="menu-item">
+                    <div>
+                    <img alt="{Content.Title}" src="{Content.ImageUrl}" />
+                    <span>{Content.Title}</span>
+                    </div>
+                </stl:a>
+                </stl:contents> 
+                </div>
+                <div class="col-xs-5 col-sm-5 menu-right">
+                    <stl:channels groupChannel="辅助导航" topLevel="0" totalNum="3">
+                        <stl:a class="menu-item"></stl:a>
+                    </stl:channels> 
+                </div>
+            </div>
+            </div> 
+        </div>
+        <ul id="menu" class="nav navbar-nav">
+            <li class="dropdown">
+            <span class="dropdown-toggle">
+                <stl:channel channelIndex="产品功能"></stl:channel>
+                <span class="caret"></span>
+                <div class="dropdown-menu" role="menu">
+                <div class="dropdown-menu-inner">
+                    <div class="menu">
+                    <h1 class="menu-header">数据分析与服务</h1>
+                    <div class="menu-list">
+                        <stl:contents channelIndex="产品功能" totalNum="1">
+                        <stl:a  class="menu-item conversion">
+                        <img alt="{Content.Title}" src="{Content.ImageUrl}" />
+                        <h2>{Content.Title}</h2>
+                        <p>
+                                {Content.Summary}
+                        </p>
+                        <span>
+                            了解更多
+                            <img alt="icon arrow" src="{Stl.SiteUrl}/images/eb1c.png" />
+                        </span>
+                        </stl:a>
+                        </stl:contents>
+                        <stl:contents channelIndex="产品功能" totalNum="1" startNum="2">
+                        <stl:a  class="menu-item engage">
+                        <img alt="{Content.Title}" src="{Content.ImageUrl}" />
+                        <h2>{Content.Title}</h2>
+                        <p>
+                                {Content.Summary}
+                        </p>
+                        <span>
+                            了解更多
+                            <img alt="icon arrow" src="{Stl.SiteUrl}/images/eb1c.png" />
+                        </span>
+                        </stl:a>
+                        </stl:contents> 
+                        
+                        <stl:contents channelIndex="产品功能" totalNum="1" startNum="3">
+                        <stl:a  class="menu-item service">
+                        <img alt="{Content.Title}" src="{Content.ImageUrl}" />
+                        <h2>{Content.Title}</h2>
+                        <p>
+                                {Content.Summary}
+                        </p>
+                        <span>
+                            了解更多
+                            <img alt="icon arrow" src="{Stl.SiteUrl}/images/eb1c.png" />
+                        </span>
+                        </stl:a>
+                        </stl:contents>  
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </span>
+            </li>
+            <li class="js-help">
+            <stl:a class="page-scroll" channelIndex="帮助中心"></stl:a>
+            </li>
+            <li class="js-about">
+            <stl:a class="page-scroll" channelIndex="关于我们"></stl:a>
+            </li> 
+        </ul>
+        </div>
+    </div>
+    
+    
+    <div class="body-ck category-list-wrapper">
+        <ul class="category-list"> 
+        <li><a href="{Stl.SiteUrl}/">首页</a></li>
+        <stl:channels groupChannel="主导航" topLevel="0">  
+                <stl:if type="UpChannelOrSelf">
+                    <stl:yes>
+                        <li class="active"><stl:a></stl:a></li>
+                </stl:yes> 
+                    <stl:no>
+                        <li class=""><stl:a></stl:a></li>
+                    </stl:no>
+                </stl:if> 
+            </stl:channels> 
+        </ul>
+        <div class="input-search">
+        <form action="{Stl.SiteUrl}/utils/search.html"  method="get"> 
+            <input class="sear-ss" type="text" name="word" id="search_keywords" />
+            <input type="button"  class="sear-an" />
+        </form>    
+    </div>
+</div>
+</nav>

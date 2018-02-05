@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <stl:include file="@/include/header.html"></stl:include>  
+</head>
+<body>
+  <div class="page-wrapper">
+    <stl:include file="@/include/nav.html"></stl:include>  
+
+    <!-- Main.Start -->
+    <div id="main" class="">
+      <div class="body-ck">
+        <!-- 内容右部导航栏开始 -->
+        <stl:include file="@/include/right.html"></stl:include> 
+        <!-- 内容右部导航栏结束 -->
+        <!-- 内容中部导航栏开始 -->
+        <div class="main-center">
+          
+<div class="main-center-body">
+	<div class="main-center-body-bt">
+		<h1>{Content.Title}</h1>
+	</div>
+  <div class="main-center-body-xx info">
+    <span>{Content.Author}</span>
+    <span><stl:content type="AddDate" formatString="yyyy-MM-dd"></stl:content></span>
+      <span>
+            <img alt="{Content.Title}" class="icon-tag" src="{Stl.SiteUrl}/images/7e89.png" />
+            <stl:tags context="Content">
+                <stl:a href="/utils/tags.html?tagName={Tag.Name}">{Tag.Name}</stl:a> 
+            </stl:tags>
+      </span>
+  </div>
+  <div class="main-center-body-nr">
+    {Content.Content}
+  </div>
+  <div class="social-share">
+    <span>分享</span>
+    <a href="javascript:openUrl(&#39;http://service.weibo.com/share/share.php?url={Content.NavigationUrl}&amp;title={Content.Title}&amp;pic={Content.ImageUrl}&#39;)"><img alt="Weibo" src="{Stl.SiteUrl}/images/79ed.png" /></a>
+  </div>
+	<div class="main-center-body-sx">
+		<p>
+      上一篇<br />
+      <stl:navigation type="PreviousContent"></stl:navigation> 
+    </p>
+		<p>
+      下一篇<br />
+      <stl:navigation type="NextContent"></stl:navigation>
+    </p>
+	</div>
+	<!-- 响应上下导航开始 -->
+	<div class="main-center-body-msx">
+		<p> 
+            <stl:navigation tipText="上一篇：" type="PreviousContent"></stl:navigation> 
+    </p>
+		<p> 
+            <stl:navigation tipText="下一篇：" type="NextContent"></stl:navigation> 
+    </p>
+	</div>
+	<!-- 响应上下导航结束 -->
+</div>
+<!-- 文章列表结束 -->
+
+        </div>
+        <!-- 内容中部导航栏结束 -->
+      </div>
+    </div>
+    <!-- Main.End --> 
+    
+    <stl:include file="@/include/footer.html"></stl:include> 
+  </div> 
+
+  <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <stl:include file="@/include/header.html"></stl:include>  
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-light">
+  <button class="navbar-toggle" data-toggle="collapse" data-target="#responsive-navbar">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+
+  <div class="container body-ck">
+    <a href="{Stl.SiteUrl}" class="navbar-brand navbar-logo">
+      <img alt="Logo" class="logo" src="{Stl.Logo}">
+    </a>
+    <div class="navbar-collapse" id="">
+      <div class="menu-xs">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-7 col-sm-7 menu-left">
+            <stl:contents channelIndex="产品功能" totalNum="3">
+              <stl:a class="menu-item">
+                <div>
+                  <img alt="{Content.Title}" src="{Content.ImageUrl}" />
+                  <span>{Content.Title}</span>
+                </div>
+              </stl:a>
+            </stl:contents> 
+            </div>
+            <div class="col-xs-5 col-sm-5 menu-right">
+                <stl:channels groupChannel="辅助导航" totalNum="3">
+                    <stl:a class="menu-item"></stl:a>
+                </stl:channels> 
+            </div>
+          </div>
+        </div> 
+      </div>
+      <ul id="menu" class="nav navbar-nav">
+        <li class="dropdown">
+          <span class="dropdown-toggle">
+            <stl:channel channelIndex="产品功能"></stl:channel>
+            <span class="caret"></span>
+            <div class="dropdown-menu" role="menu">
+              <div class="dropdown-menu-inner">
+                <div class="menu">
+                  <h1 class="menu-header">数据分析与服务</h1>
+                  <div class="menu-list">
+                     <stl:contents channelIndex="产品功能" totalNum="1">
+                    <stl:a  class="menu-item conversion">
+                      <img alt="{Content.Title}" src="{Content.ImageUrl}" />
+                      <h2>{Content.Title}</h2>
+                      <p>
+                            {Content.Summary}
+                      </p>
+                      <span>
+                        了解更多
+                        <img alt="icon arrow" src="{Stl.SiteUrl}/images/eb1c.png" />
+                      </span>
+                    </stl:a>
+                    </stl:contents>
+                    <stl:contents channelIndex="产品功能" totalNum="1" startNum="2">
+                    <stl:a  class="menu-item engage">
+                      <img alt="{Content.Title}" src="{Content.ImageUrl}" />
+                      <h2>{Content.Title}</h2>
+                      <p>
+                            {Content.Summary}
+                      </p>
+                      <span>
+                        了解更多
+                        <img alt="icon arrow" src="{Stl.SiteUrl}/images/eb1c.png" />
+                      </span>
+                    </stl:a>
+                    </stl:contents> 
+                    
+                    <stl:contents channelIndex="产品功能" totalNum="1" startNum="3">
+                    <stl:a  class="menu-item service">
+                      <img alt="{Content.Title}" src="{Content.ImageUrl}" />
+                      <h2>{Content.Title}</h2>
+                      <p>
+                            {Content.Summary}
+                      </p>
+                      <span>
+                        了解更多
+                        <img alt="icon arrow" src="{Stl.SiteUrl}/images/eb1c.png" />
+                      </span>
+                    </stl:a>
+                    </stl:contents>  
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li class="js-help">
+          <stl:a class="page-scroll" channelIndex="帮助中心"></stl:a>
+        </li>
+        <li class="js-about">
+          <stl:a class="page-scroll" channelIndex="关于我们"></stl:a>
+        </li> 
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="body-ck category-list-wrapper">
+    <ul class="category-list"> 
+      <li class="active"><a href="{Stl.SiteUrl}/">首页</a></li>
+      <stl:channels groupChannel="主导航">
+        <li class=""><stl:a></stl:a></li>
+        </stl:channels> 
+    </ul>
+    <div class="input-search">
+        <form action="{Stl.SiteUrl}/utils/search.html"  method="get"> 
+          <input class="sear-ss" type="text" name="word" id="search_keywords" />
+          <input type="button"  class="sear-an" />
+      </form>  
+  </div>
+</nav>
+
+    <!-- Main.Start -->
+    <div id="main" class="index">
+
+
+        <div class="body-ck">
+  <div id="myCarousel" class="carousel slide"> 
+    <div class="carousel-inner">
+      <div class="item active">
+         <img src="{Channel.ImageUrl}" />
+      </div>
+    </div> 
+  </div>
+</div>
+
+
+      <div class="body-ck">
+        <!-- 内容右部导航栏开始 -->
+        <stl:include file="@/include/right.html"></stl:include>   
+        <!-- 内容右部导航栏结束 -->
+        <!-- 内容中部导航栏开始 -->
+        <div class="main-center">
+          <div class="main-center-arti">
+  <ul class="posts-list">
+        <stl:pageContents pageNum="3" scope="Descendant" Channelgroup="主导航">
+    <li class="article-item">
+      <h1><stl:a></stl:a></h1>
+      <div class="info">
+        <span>{Content.Author}</span>
+        <span><stl:content type="AddDate" formatString="yyyy-MM-dd"></stl:content></span>
+          <span>
+            <img alt="{Content.Title}" class="icon-tag" src="{Stl.SiteUrl}/images/7e89.png" />
+            <stl:tags context="Content">
+                <stl:a href="/utils/tags.html?tagName={Tag.Name}">{Tag.Name}</stl:a> 
+            </stl:tags>
+          </span>
+      </div>
+      <stl:if testType="ImageUrl" testOperate="NotEmpty"> 
+          <stl:yes>
+                <stl:a class="cover" style="background-image: url({Content.ImageUrl});"><span style="display:none"></span></stl:a>
+         </stl:yes> 
+      </stl:if>
+      <p class="sub-title"><stl:a><stl:content type="Summary" wordNum="100"></stl:content></stl:a></p>
+      <b>
+        <stl:a class="link">
+          阅读全文
+          <img alt="right arrow" class="arrow-right" src="{Stl.SiteUrl}/images/b45a.png" />
+        </stl:a>
+      </b>
+    </li>
+    </stl:pageContents> 
+  </ul>
+</div>
+
+
+<div class="main-center-page">
+    <nav class="pagination">
+            <!--
+            <stl:pageItem type="FirstPage">
+                <stl:yes>
+                    <span class="first">
+                        <a href="{Current.Url}">« 第一页</a>
+                    </span> 
+                </stl:yes> 
+            </stl:pageItem>-->
+            <stl:pageItem type="PreviousPage">
+                <stl:yes>
+                    <span class="prev">
+                        <a rel="prev" href="{Current.Url}">‹ 上一页</a>
+                    </span> 
+                </stl:yes> 
+                <stl:no> 
+                    <span class="prev">
+                        ‹ 上一页
+                    </span> 
+                </stl:no>
+            </stl:pageItem>
+            <stl:pageItem type="PageNavigation" listNum="5">
+                <stl:yes>
+                    <span class="page">
+                        <a href="{Current.Url}">{Current.Num}</a>
+                    </span> 
+                </stl:yes>
+                <stl:no>
+                    <span class="page current">
+                        {Current.Num}
+                    </span>
+                </stl:no>
+            </stl:pageItem> 
+            <stl:pageItem type="NextPage">
+                <stl:yes> 
+                    <span class="next">
+                        <a rel="next" href="{Current.Url}">下一页 ›</a>
+                    </span> 
+                </stl:yes> 
+                <stl:no> 
+                    <span class="next">
+                        下一页 ›
+                    </span> 
+                </stl:no>
+            </stl:pageItem> 
+            <!--
+            <stl:pageItem type="LastPage">
+                <stl:yes>
+                    <span class="last">
+                        <a href="{Current.Url}">最后一页 »</a>
+                    </span> 
+                </stl:yes> 
+            </stl:pageItem> -->
+  </nav> 
+</div>
+
+        </div>
+        <!-- 内容中部导航栏结束 -->
+      </div>
+    </div>
+    <!-- Main.End -->
+    <stl:include file="@/include/footer.html"></stl:include> 
+  </div> 
+  <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</body>
+</html>

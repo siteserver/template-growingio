@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <stl:include file="@/include/header.html"></stl:include>  
+</head>
+<body>
+  <div class="page-wrapper"> 
+    <stl:include file="@/include/nav.html"></stl:include>  
+
+    <!-- Main.Start -->
+    <div id="main" class="index">
+
+
+            <div class="body-ck">
+      <div id="myCarousel" class="carousel slide"> 
+        <div class="carousel-inner">
+          <div class="item active">
+             <img src="{Channel.ImageUrl}" />
+          </div>
+        </div> 
+      </div>
+    </div>
+    
+    
+          <div class="body-ck">
+            <!-- 内容右部导航栏开始 -->
+            <stl:include file="@/include/right.html"></stl:include> 
+            <!-- 内容右部导航栏结束 -->
+            <!-- 内容中部导航栏开始 -->
+            <div class="main-center">
+              <div class="main-center-arti">
+      <ul class="posts-list">
+            <stl:pageContents pageNum="3">
+        <li class="article-item">
+          <h1><stl:a></stl:a></h1>
+          <div class="info">
+            <span>{Content.Author}</span>
+            <span><stl:content type="AddDate" formatString="yyyy-MM-dd"></stl:content></span>
+              <span>
+                <img alt="{Content.Title}" class="icon-tag" src="{Stl.SiteUrl}/images/7e89.png" />
+                <stl:tags context="Content">
+                    <stl:a href="/utils/tags.html?tagName={Tag.Name}">{Tag.Name}</stl:a> 
+                </stl:tags>
+              </span>
+          </div>
+          <stl:if testType="ImageUrl" testOperate="NotEmpty"> 
+              <stl:yes>
+                    <stl:a class="cover" style="background-image: url({Content.ImageUrl});"><span style="display:none"></span></stl:a>
+             </stl:yes> 
+          </stl:if>
+          <p class="sub-title"><stl:a><stl:content type="Summary" wordNum="100"></stl:content></stl:a></p>
+          <b>
+            <stl:a class="link">
+              阅读全文
+              <img alt="right arrow" class="arrow-right" src="{Stl.SiteUrl}/images/b45a.png" />
+            </stl:a>
+          </b>
+        </li>
+        </stl:pageContents> 
+      </ul>
+    </div>
+    
+    
+    <div class="main-center-page">
+        <nav class="pagination">
+                <!--
+                <stl:pageItem type="FirstPage">
+                    <stl:yes>
+                        <span class="first">
+                            <a href="{Current.Url}">« 第一页</a>
+                        </span> 
+                    </stl:yes> 
+                </stl:pageItem>-->
+                <stl:pageItem type="PreviousPage">
+                    <stl:yes>
+                        <span class="prev">
+                            <a rel="prev" href="{Current.Url}">‹ 上一页</a>
+                        </span> 
+                    </stl:yes> 
+                    <stl:no> 
+                        <span class="prev">
+                            ‹ 上一页
+                        </span> 
+                    </stl:no>
+                </stl:pageItem>
+                <stl:pageItem type="PageNavigation" listNum="5">
+                    <stl:yes>
+                        <span class="page">
+                            <a href="{Current.Url}">{Current.Num}</a>
+                        </span> 
+                    </stl:yes>
+                    <stl:no>
+                        <span class="page current">
+                            {Current.Num}
+                        </span>
+                    </stl:no>
+                </stl:pageItem> 
+                <stl:pageItem type="NextPage">
+                    <stl:yes> 
+                        <span class="next">
+                            <a rel="next" href="{Current.Url}">下一页 ›</a>
+                        </span> 
+                    </stl:yes> 
+                    <stl:no> 
+                        <span class="next">
+                            下一页 ›
+                        </span> 
+                    </stl:no>
+                </stl:pageItem> 
+                <!--
+                <stl:pageItem type="LastPage">
+                    <stl:yes>
+                        <span class="last">
+                            <a href="{Current.Url}">最后一页 »</a>
+                        </span> 
+                    </stl:yes> 
+                </stl:pageItem> -->
+      </nav> 
+    </div>
+    
+            </div>
+            <!-- 内容中部导航栏结束 -->
+          </div>
+        </div>
+        <!-- Main.End --> 
+        <stl:include file="@/include/footer.html"></stl:include> 
+  </div> 
+
+  <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</body>
+</html>

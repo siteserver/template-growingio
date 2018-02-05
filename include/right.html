@@ -1,0 +1,20 @@
+<div class="main-right">
+    <div class="panel hot">
+        <h1>最新发布</h1>
+        <ul>
+        <stl:contents scope="Descendant" groupChannel="主导航" totalNum="10" order="AddDate" topLevel="0">
+            <li><stl:a><stl:content  wordNum="17"></stl:content></stl:a></li>
+        </stl:contents>
+        </ul>
+    </div>
+    <div class="panel tags">
+        <h1>热门标签</h1>
+        <ul>
+        <stl:tags context="Channel" totalNum="10" groupChannel="主导航"  topLevel="0">
+            <li>
+                <stl:a href="{Stl.SiteUrl}/utils/tags.html?tagName={Tag.Name}">{Tag.Name}</stl:a>
+            </li> 
+        </stl:tags>
+        </ul>
+    </div>
+</div>
